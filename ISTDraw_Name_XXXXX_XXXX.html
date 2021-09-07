@@ -1,0 +1,104 @@
+<html >
+<head>
+<style>
+table {width: 100%}
+table, td, th {border-collapse: collapse; border: 1px solid black; background-color:#FFFFFF; font-family:"Times New Roman", Times, serif; text-align:center}
+h1 {font-family:"Times New Roman", Times, serif; font-size:24px; color:#0000ff; text-align:center}
+h2 {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; text-align:center}
+h3 {font-family:Arial, Helvetica, sans-serif; font-style:italic; font-size:42px; color:#FF0000}
+</style>
+<title>International Ski Tours</title>
+</head>
+
+<table width="80%" border="1">
+  <tr>
+    <td width="25%" height="42"><h2>Name, XXXXX, XXXX</h2></td>
+    <td width="50%"><h1>International Ski Tours</h1></td>
+    <td width="25%"><h2><img src="IST_logo_XXXXX_XXXX.jpg"></h2></td>
+  </tr>
+</table>
+ <div align="center">
+   <h3>Prize Draw Quick Quiz</h3>
+   <!--Enter placeholder -->
+   <h3 id="Enter"></h3>
+   <h2>Enter your choices 1,2,or 3 in the answer boxes   </h2>
+ </div><br>
+What does IST stand for?<br>
+1.International Snow Travel<br>
+2. International Ski Tours<br>
+3. International Ski Travel<br>
+Answer 1.
+<!--Answer1 input box -->
+<input id="Answer1" type="number" ><br><br>
+What sort of accommodation does IST provide?<br>
+1. Budget accommodation<br>
+2. Deluxe accommodation<br>
+3. Luxury accommodation<br>
+Answer 2. 
+<!--Answer2 input box -->
+<input id="Answer2" type="number" ><br><br>
+Who does IST provide fun for?<br>
+1. Children<br>
+2. All the family<br>
+3. Adults<br>
+Answer 3. 
+<!--Answer3 input box -->
+<input id="Answer3" type="number" ><br><br>
+<button type="button" onClick="myFunction()">Test your answers</button>
+<br>
+<p>Number of correct answers</p>
+<!--count input box -->
+<input id="count"type="number">
+</p>
+<!--reponse placeholder -->
+<p id="response"> </p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+//write your code here
+function myFunction()
+{
+	//Variables to fetch values in Answer input boxes
+	var ans1 = Answer1.value; //document.getElementById("Answer1").value;
+	var ans2 = Answer2.value;
+	var ans3 = Answer3.value;
+	//count variable to store number of correct answers
+	var count = 0;
+	
+	//checks to compute number of correct answers
+	if(ans1 == 2)
+		count++;
+	if(ans2 == 3)
+		count++;
+	if(ans3 == 2)
+		count++;
+	
+	//alerting number of correct answers
+	alert("Number of correct answers are: " + count);
+	
+	//inserting count value in the count input box
+	document.getElementById("count").value = count;
+	
+	//text to display when all answers are correct
+	if(count == 3)
+	{
+		document.getElementById("response").innerHTML = "Well done";
+		document.getElementById("Enter").innerHTML = "Enter draw";
+	}
+	
+	//deleting entries of answers that are incorrect
+	if(ans1 != 2)
+		document.getElementById("Answer1").value = "";
+	if(ans2 != 3)
+		document.getElementById("Answer2").value = "";
+	if(ans3 != 2)
+		document.getElementById("Answer3").value = "";
+	
+	//text to display if there are any incorrect entries
+	if(count != 3)
+		document.getElementById("response").innerHTML = "Click <a href='ISTDraw_Name_XXXXX_XXXX.html'>here</a> to try again";
+}
+</SCRIPT>
+
+</body>
+</html>
